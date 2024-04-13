@@ -10,7 +10,7 @@ namespace Supermarket_mvp.View
     {
         string PayModeId { get; set; }
         string PayModeName { get; set; }
-        string PayModeObservation { get; set; }
+        string PayModeObservación { get; set; }
 
         string SearchValue { get; set; }
         bool IsEdit { get; set; }   
@@ -24,7 +24,7 @@ namespace Supermarket_mvp.View
         event EventHandler SaveEvent;
         event EventHandler CancellEvent;
 
-        void SerPayModeListBildingSource(BindingSource payModeBindingSource);
+    //    void SerPayModeListBildingSource(BindingSource payModeBindingSource);
         void SetPayModeListBildingSource(BindingSource payModeList);
         void Show();
 

@@ -11,17 +11,24 @@ using System.Windows.Forms;
 namespace Supermarket_mvp.View
 {
     public partial class PayModeView : Form, IPayModeView
-    { 
-        // ERRORES EN ESTA CLASE AL AGREGAR MANUALMENTE LAS PROPIEDADES, LO HICE COMO APARECE EN LA GUIA PERO PERO MUESTRA 13 ERRORES
-        private string payModeId { get; set; }
+    {
+        // ERRORES EN ESTA CLASE AL AGREGAR MANUALMENTE LAS PROPIEDADES,
+        // LO HICE COMO APARECE EN LA GUIA PERO PERO MUESTRA 13 ERRORES
+        // PUNTO 3.6
+        // Voy en el punto 5.10
+        //private object txtSearch;
+        //private object txtPayModeId;
+        //private string payModeId; 
         private string payModeName;
         private bool isEdit;
         private string message;
-        private string PayModeObservation { get; set; }
-        private string SearchValue;
-        private bool IsSuccessfulM;
-        private object DgPayMode;
-        private object TxtSearch;
+        private string payModeObservation;
+        private string searchValue;
+        private bool isSuccessfulM;
+        //private object DgPayMode;
+        //private object TxtPayModeId;
+
+        //private object txtPayModeId;
 
         public PayModeView()
         {
@@ -49,11 +56,13 @@ namespace Supermarket_mvp.View
 
 
 
-        private string PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-       public string PayModeName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-       public string PayModeObservation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-       public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-       public bool IsEdit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+       // private string PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      // public string PayModeName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public string PayModebservation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+       /// <summary>
+       //public string SearchValue { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+       /// </summary>
+     //  public bool IsEdit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
        public bool IsSuccesful { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
        public string Mesage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
@@ -72,11 +81,12 @@ namespace Supermarket_mvp.View
 
         public string PayModeId
         {
-            get { return TxtPaymodeId.Text; }
+            get { return TxtPayModeId.Text; }
             set { TxtPayModeId.Text = value; }
 
         }
 
+        
         public string PayModeName
         {
             get { return TxtPayModeName.Text; }
@@ -123,15 +133,23 @@ namespace Supermarket_mvp.View
 
         }
 
-        public void SetPayModeListBildingSource(BindingSource payModeList)
+        public string PayModeObservación { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        string IPayModeView.PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+         public void SetPayModeListBildingSource(BindingSource payModeList)
+         {
+
+          DgPayMode.DataSource = payModeList;
+
+         }
+
+       /* public void SetPayModeListBildingSource(BindingSource payModeList)
         {
-        
-         DgPayMode.DataSource = payModeList;
-
-        }
+            throw new NotImplementedException();
+        }*/
 
 
-   
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -162,11 +180,9 @@ namespace Supermarket_mvp.View
 
         }
 
-     /*   public void SetPayModeListBildingSource(BindingSource payModeList)
+        public void SerPayModeListBildingSource(BindingSource payModeBindingSource)
         {
-            throw new NotImplementedException();
+      //      throw new NotImplementedException();   
         }
-     */
-
     }
 }
