@@ -15,6 +15,8 @@ namespace Supermarket_mvp.Presenters
         private IPayModeRepository repository;
         private BindingSource payModeBindingSource;
         private IEnumerable<PayModeModel> payModeList;
+        private IMainView view1;
+        private string sqlConnectionString;
 
         public PayModePresenter(IPayModeView view, IPayModeRepository repository)
         {
@@ -29,9 +31,15 @@ namespace Supermarket_mvp.Presenters
             this.view.SaveEvent += SavePayMode;
             this.view.CancellEvent += CancelAction;
 
-           // this.view.SerPayModeListBildingSource(payModeBindingSource);
+            this.view.SerPayModeListBildingSource(payModeBindingSource);
             loadAllPayModeList();
             this.view.Show();
+        }
+
+        public PayModePresenter(IMainView view1, string sqlConnectionString)
+        {
+            this.view1 = view1;
+            this.sqlConnectionString = sqlConnectionString;
         }
 
         private void loadAllPayModeList()

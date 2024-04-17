@@ -13,7 +13,8 @@ namespace Supermarket_mvp._Repositories
     {
         public PayModeRepository(string connectionString) 
         {
-          this.connetionString = connectionString;
+              this.connetionString = connectionString;
+            // this.connetionString = connectionString;
         }
 
         public IEnumerable<PayModeModel> GetAll() 

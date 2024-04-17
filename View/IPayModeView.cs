@@ -24,7 +24,9 @@ namespace Supermarket_mvp.View
         event EventHandler SaveEvent;
         event EventHandler CancellEvent;
 
-    //    void SerPayModeListBildingSource(BindingSource payModeBindingSource);
+        void SerPayModeListBildingSource(BindingSource payModeBindingSource);
+
+        //    void SerPayModeListBildingSource(BindingSource payModeBindingSource);
         void SetPayModeListBildingSource(BindingSource payModeList);
         void Show();
 
