@@ -187,14 +187,14 @@ namespace Supermarket_mvp.View
 
 
         private static PayModeView instance;
-
+        private static Form? parentContainer;
 
         public static PayModeView GetInstance() 
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new PayModeView();
-
+                instance.MdiParent = parentContainer;
 
             }
             else 
@@ -211,6 +211,14 @@ namespace Supermarket_mvp.View
         
         }
 
+        internal class GetInstance : IPayModeView
+        {
+            private MainView mainView;
 
+            public GetInstance(MainView mainView)
+            {
+                this.mainView = mainView;
+            }
+        }
     }
 }
