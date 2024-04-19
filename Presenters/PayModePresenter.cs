@@ -19,7 +19,7 @@ namespace Supermarket_mvp.Presenters
         private string sqlConnectionString;
 
         public PayModePresenter(IPayModeView view, IPayModeRepository repository)
-        {
+        {                                                                               
             this.payModeBindingSource = new BindingSource();
             this.view = view;
             this.repository = repository;
@@ -50,27 +50,104 @@ namespace Supermarket_mvp.Presenters
 
         private void CancelAction(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+         //   throw new NotImplementedException();
+         CleanViewFields();
         }
 
         private void SavePayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+          //  throw new NotImplementedException();
+          var payMode = new PayModeModel();
+          payMode.Id = Convert.ToInt32(payMode.Id);
+          payMode.Name = view.PayModeName;
+          payMode.Observation = view.PayModeObservación;
+
+            try
+            {                                                           
+                new Common.ModelDataValidation().Validate(payMode);
+                if (view.IsEdit)
+                {
+                    repository.Edit(payMode);
+                    view.Mesage = "PayMode edited succesfuly";
+                }
+
+                else 
+                {
+                    repository.Add(payMode);
+                    view.Mesage = "PayMode added succesfuly";
+                }
+                view.IsSuccesful = true;    
+                loadAllPayModeList();
+                CleanViewFields();
+
+
+            }
+
+            catch (Exception ex)             
+            {
+                    view.IsSuccesful = false;
+                    view.Mesage = ex.Message;   
+            
+            }
+
+
+
         }
+
+        private void CleanViewFields()
+        {
+            //throw new NotImplementedException();
+            view.PayModeId = "0";
+            view.PayModeName = "";
+            view.PayModeObservación = "";
+        }
+  
 
         private void DeleteSelelctedPayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();            try
+            try
+            {
+                var payMode = (PayModeModel)payModeBindingSource.Current;
+
+
+                repository.Delete(payMode.Id);
+                view.IsSuccesful = true;
+                view.Mesage = "Pay Mode deleted succesfully";
+                loadAllPayModeList();
+            
+            }
+
+
+            catch (Exception ex)
+            {
+                view.IsSuccesful = false;
+                view.Mesage = "An error ocurred, Could not delete pay mode";
+
+            }
+
+
+
         }
 
         private void LoadSelectPayModeToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            var payMode = (PayModeModel)payModeBindingSource.Current;
+
+            view.PayModeId = payMode.Id.ToString();
+            view.PayModeName = payMode.Name;
+            view.PayModeObservación = payMode.Observation;
+
+            view.IsEdit = true;
+
         }
 
         private void AddNewPayMode(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            //   MessageBox.Show("Se hizo clic en el boton nuevo");
+            view.IsEdit = false;
         }
 
         private void SearcPayMode(object? sender, EventArgs e)

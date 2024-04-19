@@ -2,6 +2,7 @@
 using Supermarket_mvp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO.Packaging;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Supermarket_mvp._Repositories
         public PayModeRepository(string connectionString) 
         {
               this.connetionString = connectionString;
-            // this.connetionString = connectionString;
+            
         }
 
         public IEnumerable<PayModeModel> GetAll() 
@@ -42,17 +43,52 @@ namespace Supermarket_mvp._Repositories
         }
         public void Add(PayModeModel payModeModel)
         {
-            throw new NotImplementedException();
+
+           // throw new NotImplementedException();
+        using (var connection = new SqlConnection())
+        using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;                                                
+                command.CommandText = "INSERT INTO PayMode Values (@Name, @observation)";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModeModel.Name;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModeModel.Observation;
+                command.ExecuteNonQuery();
+
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            using (var connection = new SqlConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM PayMode WHERE  Pay_Mode_Id = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.ExecuteNonQuery();
+
+            }
         }
 
         public void Edit(PayModeModel payModeModel)
         {
-            throw new NotImplementedException();
+
+           // throw new NotImplementedException();
+           using(var connection = new SqlConnection())
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;   //SE VE MAL ESA LINEA DE CODIGO ASI PERO ME TOCO NO ME DEJABA HACERLO COMO EN LA GUIA
+                command.CommandText = "@UPDATE PayMode SET Pay_Mode_Name = @name, Pay_Mode_Observation = @observation WHERE Pay_Mode_Id = @id";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModeModel.Name;
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = payModeModel.Observation;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = payModeModel.Id;
+                command.ExecuteNonQuery();                                                                                        
+
+            }
         }
         /*
         public IEnumerable<PayModeModel> GetAll()

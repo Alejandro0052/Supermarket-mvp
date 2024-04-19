@@ -121,6 +121,7 @@
             // 
             // BtnEdit
             // 
+            BtnEdit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnEdit.Image = Properties.Resources.edit;
             BtnEdit.Location = new Point(610, 96);
             BtnEdit.Name = "BtnEdit";
@@ -130,6 +131,7 @@
             // 
             // BtnDelete
             // 
+            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnDelete.Image = Properties.Resources.delete;
             BtnDelete.Location = new Point(610, 181);
             BtnDelete.Name = "BtnDelete";
@@ -139,15 +141,18 @@
             // 
             // BtnClose
             // 
+            BtnClose.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnClose.Image = Properties.Resources.cerrar;
             BtnClose.Location = new Point(610, 266);
             BtnClose.Name = "BtnClose";
             BtnClose.Size = new Size(158, 70);
             BtnClose.TabIndex = 5;
             BtnClose.UseVisualStyleBackColor = true;
+            BtnClose.Click += BtnClose_Click;
             // 
             // BtnNew
             // 
+            BtnNew.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnNew.Image = Properties.Resources._new;
             BtnNew.Location = new Point(610, 6);
             BtnNew.Name = "BtnNew";
@@ -160,6 +165,7 @@
             // 
             DgPayMode.AllowUserToAddRows = false;
             DgPayMode.AllowUserToDeleteRows = false;
+            DgPayMode.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DgPayMode.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgPayMode.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgPayMode.Location = new Point(0, 68);
@@ -168,9 +174,11 @@
             DgPayMode.RowHeadersWidth = 62;
             DgPayMode.Size = new Size(364, 285);
             DgPayMode.TabIndex = 3;
+            DgPayMode.CellContentClick += DgPayMode_CellContentClick;
             // 
             // BtnSearch
             // 
+            BtnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             BtnSearch.Location = new Point(146, 29);
             BtnSearch.Name = "BtnSearch";
             BtnSearch.Size = new Size(112, 34);
@@ -240,6 +248,7 @@
             BtnCancel.Size = new Size(112, 77);
             BtnCancel.TabIndex = 8;
             BtnCancel.UseVisualStyleBackColor = true;
+            BtnCancel.Click += BtnCancel_Click;
             // 
             // label5
             // 
@@ -286,8 +295,11 @@
             // 
             TxtPayModeId.Location = new Point(6, 44);
             TxtPayModeId.Name = "TxtPayModeId";
+            TxtPayModeId.ReadOnly = true;
             TxtPayModeId.Size = new Size(150, 31);
             TxtPayModeId.TabIndex = 1;
+            TxtPayModeId.Text = "0";
+            TxtPayModeId.TextAlign = HorizontalAlignment.Right;
             TxtPayModeId.TextChanged += textBox1_TextChanged;
             // 
             // PayModeView

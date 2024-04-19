@@ -16,6 +16,7 @@ namespace Supermarket_mvp.View
         {
             InitializeComponent();
             BtnPayMode.Click += delegate { ShowPayModeView?.Invoke(this, EventArgs.Empty); };
+            BtnExit.Click += delegate { this.Close(); };
         }
         event EventHandler ShowPayModeView;
         event EventHandler ShowProductView;
@@ -30,7 +31,7 @@ namespace Supermarket_mvp.View
 
             remove
             {
-            //    throw new NotImplementedException();
+                //    throw new NotImplementedException();
             }
         }
 
@@ -66,6 +67,11 @@ namespace Supermarket_mvp.View
         }
 
         private void BtnPayMode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
