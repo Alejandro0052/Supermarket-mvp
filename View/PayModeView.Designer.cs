@@ -1,4 +1,5 @@
-﻿namespace Supermarket_mvp.View
+﻿
+namespace Supermarket_mvp.View
 {
     partial class PayModeView
     {
@@ -128,6 +129,7 @@
             BtnEdit.Size = new Size(158, 68);
             BtnEdit.TabIndex = 7;
             BtnEdit.UseVisualStyleBackColor = true;
+            BtnEdit.Click += this.BtnEdit_Click;
             // 
             // BtnDelete
             // 
@@ -138,6 +140,7 @@
             BtnDelete.Size = new Size(158, 69);
             BtnDelete.TabIndex = 6;
             BtnDelete.UseVisualStyleBackColor = true;
+            BtnDelete.Click += this.BtnDelete_Click;
             // 
             // BtnClose
             // 
@@ -184,9 +187,11 @@
             BtnSearch.Size = new Size(112, 34);
             BtnSearch.TabIndex = 2;
             BtnSearch.UseVisualStyleBackColor = true;
+            BtnSearch.Click += BtnSearch_Click;
             // 
             // TxtSearch
             // 
+            TxtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             TxtSearch.Location = new Point(0, 31);
             TxtSearch.Name = "TxtSearch";
             TxtSearch.PlaceholderText = "Data to Search";
@@ -323,6 +328,16 @@
             tabPagePayModeDetail.ResumeLayout(false);
             tabPagePayModeDetail.PerformLayout();
             ResumeLayout(false);
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+   //         throw new NotImplementedException();
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+      //      throw new NotImplementedException();
         }
 
         #endregion

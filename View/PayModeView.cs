@@ -59,7 +59,7 @@ namespace Supermarket_mvp.View
             {
                 AddNewEvent?.Invoke(this, EventArgs.Empty);
 
-                tabControl1.TabPages.Remove(tabPagePayModeList);
+            //    tabControl1.TabPages.Remove(tabPagePayModeList);
                 tabControl1.TabPages.Add(tabPagePayModeDetail);
                 tabPagePayModeDetail.Text = "Add New Pay Mode";
 
@@ -68,7 +68,7 @@ namespace Supermarket_mvp.View
             {
                 EditEvent?.Invoke(this, EventArgs.Empty);
 
-                tabControl1.TabPages.Remove(tabPagePayModeList);
+          //      tabControl1.TabPages.Remove(tabPagePayModeList);
                 tabControl1.TabPages.Add(tabPagePayModeDetail);
                 tabPagePayModeDetail.Text = "Add New Pay Mode";
 
@@ -97,7 +97,7 @@ namespace Supermarket_mvp.View
 
                 if (isSuccesful)
                 {
-                    tabControl1.TabPages.Remove(tabPagePayModeDetail);
+            //        tabControl1.TabPages.Remove(tabPagePayModeDetail);
                     tabControl1.TabPages.Add(tabPagePayModeList);
 
 
@@ -139,7 +139,7 @@ namespace Supermarket_mvp.View
         /// </summary>
         //  public bool IsEdit { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool IsSuccesful { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Mesage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    //    public string Mesage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
 
 
@@ -211,6 +211,7 @@ namespace Supermarket_mvp.View
 
         public string PayModeObservación { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         string IPayModeView.PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Mesage { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void SetPayModeListBildingSource(BindingSource payModeList)
         {
@@ -324,6 +325,11 @@ namespace Supermarket_mvp.View
 
 
         private void BtnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
         {
 
         }

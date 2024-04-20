@@ -1,4 +1,5 @@
-﻿using Supermarket_mvp.Models;
+﻿using Supermarket_mvp._Repositories;
+using Supermarket_mvp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Supermarket_mvp.Presenters
 {
-    internal class ProductPresenter : IPro
-    {
+    internal class ProductPresenter 
+        { 
         private IProductView view;
         private IProductRepository repository;
         private BindingSource productBindingSource;
         private IEnumerable<ProductModel> productList;
+        private IProductRepository repository1;
 
         public ProductPresenter(IProductView view, IProductRepository repository)
         {
@@ -35,6 +37,13 @@ namespace Supermarket_mvp.Presenters
             this.view.Show();
 
         }
+
+ /*       public ProductPresenter(IProductView view, IProductRepository repository1)
+        {
+            this.view = view;
+            this.repository1 = repository1;
+        }
+ */
         private void LoadAllProductList()
         {
             productList = repository.GetAll();

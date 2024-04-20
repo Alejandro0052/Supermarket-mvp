@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            BtnProduct = new Button();
             BtnExit = new Button();
             BtnPayMode = new Button();
             pictureBox1 = new PictureBox();
@@ -38,6 +39,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(BtnProduct);
             panel1.Controls.Add(BtnExit);
             panel1.Controls.Add(BtnPayMode);
             panel1.Controls.Add(pictureBox1);
@@ -46,6 +48,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(300, 616);
             panel1.TabIndex = 0;
+            // 
+            // BtnProduct
+            // 
+            BtnProduct.Image = Properties.Resources.products2;
+            BtnProduct.Location = new Point(40, 217);
+            BtnProduct.Name = "BtnProduct";
+            BtnProduct.Size = new Size(148, 94);
+            BtnProduct.TabIndex = 3;
+            BtnProduct.UseVisualStyleBackColor = true;
+            BtnProduct.Click += BtnProduct_Click;
             // 
             // BtnExit
             // 
@@ -101,5 +113,6 @@
         private PictureBox pictureBox1;
         private Button BtnPayMode;
         private Button BtnExit;
+        private Button BtnProduct;
     }
 }

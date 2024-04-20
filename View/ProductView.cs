@@ -15,7 +15,7 @@ namespace Supermarket_mvp.View
 
     {
 
-        public string ProductId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      //  public string ProductId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         string IProductView.ProductName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public string GetProductObservation()
@@ -43,7 +43,10 @@ namespace Supermarket_mvp.View
             InitializeComponent();
             AssociateAndRaiseViewEvents();
 
-            tabControl1.TabPages.Remove(tabPageProductDetail);
+    //        tabControl1.TabPages.Remove(tabPageProductDetail);
+            BtnClose.Click += delegate { this.Close(); };
+
+
 
         }
 
@@ -60,7 +63,7 @@ namespace Supermarket_mvp.View
             };
         }
 
-        public string Productid
+        public string ProductId
         {
             get { return TxtProductId.Text; }
             set { TxtProductId.Text = value; }
@@ -107,6 +110,29 @@ namespace Supermarket_mvp.View
         {
             DgProduct.DataSource = productList;
         }
+        private static ProductView instance;
+
+        public static ProductView GetInstance(Form parentContainer)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new ProductView();
+                instance.MdiParent = parentContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                if (instance.WindowState == FormWindowState.Minimized)
+                {
+                    instance.WindowState = FormWindowState.Normal;
+                }
+                instance.BringToFront();
+            }
+            return instance;
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
