@@ -33,7 +33,7 @@
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
             BtnClose = new Button();
-            button3 = new Button();
+            BtnDelete = new Button();
             BtnEdit = new Button();
             BtnNew = new Button();
             DgProduct = new DataGridView();
@@ -91,7 +91,7 @@
             // tabPage2
             // 
             tabPage2.Controls.Add(BtnClose);
-            tabPage2.Controls.Add(button3);
+            tabPage2.Controls.Add(BtnDelete);
             tabPage2.Controls.Add(BtnEdit);
             tabPage2.Controls.Add(BtnNew);
             tabPage2.Controls.Add(DgProduct);
@@ -116,16 +116,16 @@
             BtnClose.TabIndex = 7;
             BtnClose.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BtnDelete
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.Image = Properties.Resources.save2;
-            button3.Location = new Point(433, 259);
-            button3.Name = "button3";
-            button3.Size = new Size(284, 56);
-            button3.TabIndex = 6;
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            BtnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BtnDelete.Image = Properties.Resources.save2;
+            BtnDelete.Location = new Point(433, 259);
+            BtnDelete.Name = "BtnDelete";
+            BtnDelete.Size = new Size(284, 56);
+            BtnDelete.TabIndex = 6;
+            BtnDelete.UseVisualStyleBackColor = true;
+            BtnDelete.Click += button3_Click;
             // 
             // BtnEdit
             // 
@@ -244,8 +244,9 @@
             BtnSave.Name = "BtnSave";
             BtnSave.Size = new Size(115, 69);
             BtnSave.TabIndex = 3;
-            BtnSave.Text = "button5";
+            BtnSave.Text = "Save";
             BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
             // 
             // TxtProductName
             // 
@@ -266,8 +267,11 @@
             // 
             TxtProductId.Location = new Point(16, 31);
             TxtProductId.Name = "TxtProductId";
+            TxtProductId.ReadOnly = true;
             TxtProductId.Size = new Size(150, 31);
             TxtProductId.TabIndex = 0;
+            TxtProductId.Text = "0";
+            TxtProductId.TextAlign = HorizontalAlignment.Right;
             // 
             // ProductView
             // 
@@ -300,7 +304,7 @@
         private Button BtnSearch;
         private DataGridView DgProduct;
         private Button BtnClose;
-        private Button button3;
+        private Button BtnDelete;
         private Button BtnEdit;
         private Button BtnNew;
         private TextBox TxtProductName;

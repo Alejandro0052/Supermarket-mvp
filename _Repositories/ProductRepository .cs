@@ -29,7 +29,8 @@ namespace Supermarket_mvp._Repositories
                 command.CommandText = "INSERT INTO Product VALUES (@name, @observation)";
                 command.Parameters.Add("@name", SqlDbType.NVarChar).Value = productModel.Name;
                 command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = productModel.Observation;
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery();     
+ 
             }
         }
 
