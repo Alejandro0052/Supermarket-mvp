@@ -19,7 +19,7 @@ namespace Supermarket_mvp.View
         // 
         //private object txtSearch;
         //private object txtPayModeId;
-        private string payModeId; 
+        private string payModeId;
         private string payModeName;
         private bool isEdit;
         private string message;
@@ -76,7 +76,7 @@ namespace Supermarket_mvp.View
             };
             BtnDelete.Click += delegate
             {
-                // DeleteEvent?.Invoke(this, EventArgs.Empty);
+                DeleteEvent?.Invoke(this, EventArgs.Empty);
                 var result = MessageBox.Show(
                     "Are you sure you want to delete the selected Pay Mode," +
                     "Warning"
@@ -124,11 +124,11 @@ namespace Supermarket_mvp.View
             //ERROR PUNTO 7.3     view.IsEdit = false;
         }
 
-        private void BtnNew_Click(object? sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
+        /*   private void BtnNew_Click(object? sender, EventArgs e)
+           {
+               throw new NotImplementedException();
+           }
+        */
 
 
         // private string PayModeId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -297,12 +297,12 @@ namespace Supermarket_mvp.View
         private void LoadSelectPayModeToEdit(object? sender, EventArgs e)
         {
             // ACA HAY ERRORES PUNTO 7.3
-    //        var payMode = (PayModeModel) payModeBindingSource.Current;
+            //        var payMode = (PayModeModel) payModeBindingSource.Current;
 
 
-       //     view.PayModeId = payMode.Id.ToString();                         
-         //   view.PayModeName = payMode.Name;
-           // view.PayModeObservation = payMode.Observation;
+            //     view.PayModeId = payMode.Id.ToString();                         
+            //   view.PayModeName = payMode.Name;
+            // view.PayModeObservation = payMode.Observation;
 
             // view.IsEdit = true;
         }
@@ -318,6 +318,12 @@ namespace Supermarket_mvp.View
         }
 
         private void DgPayMode_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void BtnSave_Click(object sender, EventArgs e)
         {
 
         }

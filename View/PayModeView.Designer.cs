@@ -239,6 +239,7 @@
             BtnSave.Size = new Size(112, 77);
             BtnSave.TabIndex = 9;
             BtnSave.UseVisualStyleBackColor = true;
+            BtnSave.Click += BtnSave_Click;
             // 
             // BtnCancel
             // 

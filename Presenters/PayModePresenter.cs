@@ -23,14 +23,12 @@ namespace Supermarket_mvp.Presenters
             this.payModeBindingSource = new BindingSource();
             this.view = view;
             this.repository = repository;
-
             this.view.SaveEvent += SearcPayMode;
             this.view.AddNewEvent += AddNewPayMode;
             this.view.EditEvent += LoadSelectPayModeToEdit;
             this.view.DeleteEvent += DeleteSelelctedPayMode;
             this.view.SaveEvent += SavePayMode;
             this.view.CancellEvent += CancelAction;
-
             this.view.SerPayModeListBildingSource(payModeBindingSource);
             loadAllPayModeList();
             this.view.Show();

@@ -68,7 +68,9 @@ namespace Supermarket_mvp.View
 
         private void BtnPayMode_Click(object sender, EventArgs e)
         {
+            PayModeView payModeView = new PayModeView();
 
+            payModeView.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
