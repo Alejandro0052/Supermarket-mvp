@@ -17,6 +17,7 @@ namespace Supermarket_mvp.Presenters
         private IEnumerable<PayModeModel> payModeList;
         private IMainView view1;
         private string sqlConnectionString;
+        private IProductView view2;
 
         public PayModePresenter(IPayModeView view, IPayModeRepository repository)
         {                                                                               
@@ -38,6 +39,12 @@ namespace Supermarket_mvp.Presenters
         {
             this.view1 = view1;
             this.sqlConnectionString = sqlConnectionString;
+        }
+
+        public PayModePresenter(IProductView view2, IPayModeRepository repository)
+        {
+            this.view2 = view2;
+            this.repository = repository;
         }
 
         private void loadAllPayModeList()
