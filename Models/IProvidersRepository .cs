@@ -8,5 +8,13 @@ namespace Supermarket_mvp.Models
 {
     internal class IProvidersRepository
     {
+      //  void Add(ProvidersModel providersModel);
+       // void Edit(ProvidersModel providersModel);
+        //void Delete(int id);
+      //  IEnumerable<ProvidersModel> GetAll();
+      //  IEnumerable<ProvidersModel> GetAll(string value);
+
+
+
     }
 }

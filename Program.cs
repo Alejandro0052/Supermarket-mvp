@@ -18,8 +18,9 @@ namespace Supermarket_mvp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             string sqlConnectionString = Settings.Default.SqlConnection;
-            IMainView view = new MainView();                                
-         // IPayModeRepository repository = new PayModeRepository(sqlConnectionString);
+            IMainView view = new MainView();   
+          //  IPayModeView view = new IPayModeView(); 
+            IPayModeRepository repository = new PayModeRepository(sqlConnectionString);
             new MainPresenter(view, sqlConnectionString);
             Application.Run((Form)view);
         }

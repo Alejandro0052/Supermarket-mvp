@@ -123,6 +123,16 @@ namespace Supermarket_mvp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cancel2 {
+            get {
+                object obj = ResourceManager.GetObject("cancel2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar {
             get {
                 object obj = ResourceManager.GetObject("cerrar", resourceCulture);
@@ -223,6 +233,16 @@ namespace Supermarket_mvp.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap providers {
+            get {
+                object obj = ResourceManager.GetObject("providers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap salida {
             get {
                 object obj = ResourceManager.GetObject("salida", resourceCulture);
@@ -256,6 +276,16 @@ namespace Supermarket_mvp.Properties {
         internal static System.Drawing.Bitmap save2 {
             get {
                 object obj = ResourceManager.GetObject("save2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save3 {
+            get {
+                object obj = ResourceManager.GetObject("save3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

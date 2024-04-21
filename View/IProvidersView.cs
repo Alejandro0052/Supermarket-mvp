@@ -8,5 +8,25 @@ namespace Supermarket_mvp.View
 {
     internal class IProvidersView
     {
+        string ProviderId { get; set; }
+        string ProviderName { get; set; }
+        string ProviderObservation { get; set; }
+        string SearchValue { get; set; }
+        bool IsEdit { get; set; }
+        bool IsSuccesful { get; set; }
+        string Menssage { get; set; }
+
+        event EventHandler SearchEvent;
+        event EventHandler AddNewEvent;
+        event EventHandler EditEvent;
+        event EventHandler DeleteEvent;
+        event EventHandler SaveEvent;
+        event EventHandler CancelEvent;
+
+        /*
+        void SetProvidersListBildingSource(BindingSource providersList);
+        void Show();
+        */
+
     }
 }
