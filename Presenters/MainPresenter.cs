@@ -13,26 +13,29 @@ namespace Supermarket_mvp.Presenters
     {
         private readonly IMainView mainView;
         private readonly string sqlConnectionString;
+        private int ShowProvidersView;
 
         public MainPresenter(IMainView mainView, string sqlConnectionString)
         {
             this.mainView = mainView;
             this.sqlConnectionString = sqlConnectionString;
-            this.mainView.ShowPayModeView += ShowPayModeView;
-            this.mainView.ShowProductView += ShowProductView;
+       //     this.mainView.ShowPayModeView += ShowPayModeView;
+         //   this.mainView.ShowProductView += ShowProductView;
+     //       this.mainView.ShowProvidersView += ShowProvidersView;
         }
-
+                                                
         private void ShowProductView(object? sender, EventArgs e)
         {
             //throw new NotImplementedException();
             IProductView view = ProductView.GetInstance((MainView)mainView);
-        //    IProductView view = new ProductView();
-            IProductRepository repository = new ProductRepository(sqlConnectionString);
+           IProductView views = new ProductView();
+            IPayModeRepository repository = new PayModeRepository(sqlConnectionString);
+            IProductRepository epository = new ProductRepository(sqlConnectionString);
  //SOLUCIONAR ERROR!           new ProductPresenter(view, repository);                 
                             
 
         }
-      
+     
         private void ShowPayModeView(object? sender, EventArgs e)
         {
             IPayModeView view = PayModeView.GetInstance((MainView)mainView);

@@ -10,20 +10,27 @@ using System.Windows.Forms;
 
 namespace Supermarket_mvp.View
 {
-    public partial class MainView : Form, IMainView
+    public partial class MainView : Form
     {
+     //   int IMainView.ShowProvidersView { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public MainView()
         {
             InitializeComponent();
             BtnPayMode.Click += delegate { ShowPayModeView?.Invoke(this, EventArgs.Empty); };
             BtnExit.Click += delegate { this.Close(); };
             BtnProduct.Click += delegate { ShowProductView?.Invoke(this, EventArgs.Empty); };
-        }
+        }                                                   
         event EventHandler ShowPayModeView;
         event EventHandler ShowProductView;
+        public event EventHandler ShowProvidersView;
+        public event EventHandler ShowCategoriesView;
+
         event EventHandler ShowCustomerView;
 
-        event EventHandler IMainView.ShowPayModeView
+
+        //ACA HICE LOS CAMBIOS PARA QUE EJECUTARA
+/*        event EventHandler IMainView.ShowPayModeView
         {
             add
             {
@@ -62,6 +69,7 @@ namespace Supermarket_mvp.View
             }
         }
 
+        */
         private void MainView_Load(object sender, EventArgs e)
         {
 
@@ -84,6 +92,12 @@ namespace Supermarket_mvp.View
             ProductView productView = new ProductView();
 
             productView.Show();
+        }
+
+        private void BtnProviders_Click(object sender, EventArgs e)
+        {
+            ProvidersView providersView = new ProvidersView();
+            providersView.Show();   
         }
     }
 }

@@ -129,6 +129,7 @@ namespace Supermarket_mvp.View
             DgProviders.RowHeadersWidth = 62;
             DgProviders.Size = new Size(589, 211);
             DgProviders.TabIndex = 7;
+            DgProviders.CellContentClick += DgProviders_CellContentClick;
             // 
             // BtnClose
             // 

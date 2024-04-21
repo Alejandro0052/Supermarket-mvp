@@ -8,6 +8,8 @@ namespace Supermarket_mvp
 {
     internal static class Program 
     {
+        private static IMainView view;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -18,7 +20,7 @@ namespace Supermarket_mvp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             string sqlConnectionString = Settings.Default.SqlConnection;
-            IMainView view = new MainView();   
+     //AND HERE TOO       IMainView view = new MainView();   
           //IPayModeView view = new IPayModeView(); 
             IPayModeRepository repository = new PayModeRepository(sqlConnectionString);
             new MainPresenter(view, sqlConnectionString);
